@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Current Weather</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	
+
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+	<h1>CURRENT WEATHER APPLICATION</h1>
+	<h2 class="box1">ENTER CITY NAME AND GET CURRENT WEATHER</h2>
+	<div id="container" class="selector">
+		<select id="choose">
+			<option>Choose City</option>
+			<option>Chennai</option>
+			<option>Kolkata</option>
+			<option>Mumbai</option>
+			<option>Delhi</option>
+			<option>London</option>
+			<option>Paris</option>
+			<option>Banglore</option>
+			<option>Hyderabad</option>
+			<option>Madrid</option>
+			<option>NewYork</option>
+		</select>
+		<button id="click" class="submit">Submit</button>
+		<div id="demo" class="demo1"></div>
+	</div>
+<script>
+	$(document).ready(function(){
+		$('#click').click(function(){
+			var city=$('#choose').val();
+			if(city=='Chennai'){
+				$.post('http://api.openweathermap.org/data/2.5/weather?q=Chennai&units=metric&appid=b0792618526bcd44ce061837892988bf',function(data){
+					$('#demo').html("<h2><strong>Current Weather of "+ city + ", "+data.sys.country+ "</strong></h2>" +
+									"<table><tr><td><strong>Weather</strong> </td> "+"<td> " + data.weather[0].main +"</td></tr>" +
+						            "<tr><td><br/><strong>Description</strong></td>"+"<td><img src='http://openweathermap.org/img/w/"+data.weather[0].icon+".png'>"+data.weather[0].description+ "</td></tr>" +
+						            "<tr><td><strong>Temperature</strong></td> "+"<td>"+ data.main.temp + " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Max Temperature</strong>"+"<td>"+data.main.temp_max+ " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Min Temperature</strong>" + "<td>"+data.main.temp_min+ " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Pressure</strong>"+ "<td>"+data.main.pressure+ " hPa"+"</td></tr>" +
+						            "<tr><td><strong>Humidity</strong>"+ "<td>"+data.main.humidity+ " %"+"</td></tr>" +
+						            "<tr><td><strong>Wind Speed</strong>"+"<td>"+data.wind.speed+ " m/s"+"</td></tr>" +
+						            "<tr><td><strong>Wind Direction</strong>"+ "<td>"+data.wind.deg+ "&deg;"+"</td></tr></table>");
+
+				});
+			}
+			else if(city=='Kolkata'){
+				$.post('http://api.openweathermap.org/data/2.5/weather?q=Kolkata&units=metric&appid=b0792618526bcd44ce061837892988bf',function(data){
+					$('#demo').html("<h2>Current Weather of "+ city + ", "+data.sys.country+ "</h2>" +
+									"<table><tr><td><strong>Weather</strong> </td> "+"<td> " + data.weather[0].main +"</td></tr>" +
+						            "<tr><td><br/><strong>Description</strong></td>"+"<td><img src='http://openweathermap.org/img/w/"+data.weather[0].icon+".png'>"+data.weather[0].description+ "</td></tr>" +
+						            "<tr><td><strong>Temperature</strong></td> "+"<td>"+ data.main.temp + " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Max Temperature</strong>"+"<td>"+data.main.temp_max+ " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Min Temperature</strong>" + "<td>"+data.main.temp_min+ " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Pressure</strong>"+ "<td>"+data.main.pressure+ " hPa"+"</td></tr>" +
+						            "<tr><td><strong>Humidity</strong>"+ "<td>"+data.main.humidity+ " %"+"</td></tr>" +
+						            "<tr><td><strong>Wind Speed</strong>"+"<td>"+data.wind.speed+ " m/s"+"</td></tr>" +
+						            "<tr><td><strong>Wind Direction</strong>"+ "<td>"+data.wind.deg+ "&deg;"+"</td></tr></table>");
+
+				});
+			}
+			else if(city=='Mumbai'){
+				$.post('http://api.openweathermap.org/data/2.5/weather?q=Mumbai&units=metric&appid=b0792618526bcd44ce061837892988bf',function(data){
+					$('#demo').html("<h2>Current Weather of "+ city + ", "+data.sys.country+ "</h2>" +
+									"<table><tr><td><strong>Weather</strong> </td> "+"<td> " + data.weather[0].main +"</td></tr>" +
+						            "<tr><td><br/><strong>Description</strong></td>"+"<td><img src='http://openweathermap.org/img/w/"+data.weather[0].icon+".png'>"+data.weather[0].description+ "</td></tr>" +
+						            "<tr><td><strong>Temperature</strong></td> "+"<td>"+ data.main.temp + " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Max Temperature</strong>"+"<td>"+data.main.temp_max+ " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Min Temperature</strong>" + "<td>"+data.main.temp_min+ " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Pressure</strong>"+ "<td>"+data.main.pressure+ " hPa"+"</td></tr>" +
+						            "<tr><td><strong>Humidity</strong>"+ "<td>"+data.main.humidity+ " %"+"</td></tr>" +
+						            "<tr><td><strong>Wind Speed</strong>"+"<td>"+data.wind.speed+ " m/s"+"</td></tr>" +
+						            "<tr><td><strong>Wind Direction</strong>"+ "<td>"+data.wind.deg+ "&deg;"+"</td></tr></table>");
+
+
+				});
+			}
+			else if(city=='Delhi'){
+				$.post('http://api.openweathermap.org/data/2.5/weather?q=Delhi&units=metric&appid=b0792618526bcd44ce061837892988bf',function(data){
+					$('#demo').html("<h2>Current Weather of "+ city + ", "+data.sys.country+ "</h2>" +
+									"<table><tr><td><strong>Weather</strong> </td> "+"<td> " + data.weather[0].main +"</td></tr>" +
+						            "<tr><td><br/><strong>Description</strong></td>"+"<td><img src='http://openweathermap.org/img/w/"+data.weather[0].icon+".png'>"+data.weather[0].description+ "</td></tr>" +
+						            "<tr><td><strong>Temperature</strong></td> "+"<td>"+ data.main.temp + " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Max Temperature</strong>"+"<td>"+data.main.temp_max+ " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Min Temperature</strong>" + "<td>"+data.main.temp_min+ " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Pressure</strong>"+ "<td>"+data.main.pressure+ " hPa"+"</td></tr>" +
+						            "<tr><td><strong>Humidity</strong>"+ "<td>"+data.main.humidity+ " %"+"</td></tr>" +
+						            "<tr><td><strong>Wind Speed</strong>"+"<td>"+data.wind.speed+ " m/s"+"</td></tr>" +
+						            "<tr><td><strong>Wind Direction</strong>"+ "<td>"+data.wind.deg+ "&deg;"+"</td></tr></table>");
+				});
+			}
+			else if(city=='London'){
+				$.post('http://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=b0792618526bcd44ce061837892988bf',function(data){
+					$('#demo').html("<h2>Current Weather of "+ city + ", "+data.sys.country+ "</h2>" +
+									"<table><tr><td><strong>Weather</strong> </td> "+"<td> " + data.weather[0].main +"</td></tr>" +
+						            "<tr><td><br/><strong>Description</strong></td>"+"<td><img src='http://openweathermap.org/img/w/"+data.weather[0].icon+".png'>"+data.weather[0].description+ "</td></tr>" +
+						            "<tr><td><strong>Temperature</strong></td> "+"<td>"+ data.main.temp + " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Max Temperature</strong>"+"<td>"+data.main.temp_max+ " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Min Temperature</strong>" + "<td>"+data.main.temp_min+ " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Pressure</strong>"+ "<td>"+data.main.pressure+ " hPa"+"</td></tr>" +
+						            "<tr><td><strong>Humidity</strong>"+ "<td>"+data.main.humidity+ " %"+"</td></tr>" +
+						            "<tr><td><strong>Wind Speed</strong>"+"<td>"+data.wind.speed+ " m/s"+"</td></tr>" +
+						            "<tr><td><strong>Wind Direction</strong>"+ "<td>"+data.wind.deg+ "&deg;"+"</td></tr></table>");
+
+				});
+			}
+			else if(city=='Paris'){
+				$.ajax({
+					url: 'http://api.openweathermap.org/data/2.5/weather?q=Paris&units=metric&appid=b0792618526bcd44ce061837892988bf',
+					type: "GET",
+					dataType: "json",
+					success: function(data){
+						$('#demo').html("<h2>Current Weather of "+ city + ", "+data.sys.country+ "</h2>" +
+									"<table><tr><td><strong>Weather</strong> </td> "+"<td> " + data.weather[0].main +"</td></tr>" +
+						            "<tr><td><br/><strong>Description</strong></td>"+"<td><img src='http://openweathermap.org/img/w/"+data.weather[0].icon+".png'>"+data.weather[0].description+ "</td></tr>" +
+						            "<tr><td><strong>Temperature</strong></td> "+"<td>"+ data.main.temp + " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Max Temperature</strong>"+"<td>"+data.main.temp_max+ " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Min Temperature</strong>" + "<td>"+data.main.temp_min+ " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Pressure</strong>"+ "<td>"+data.main.pressure+ " hPa"+"</td></tr>" +
+						            "<tr><td><strong>Humidity</strong>"+ "<td>"+data.main.humidity+ " %"+"</td></tr>" +
+						            "<tr><td><strong>Wind Speed</strong>"+"<td>"+data.wind.speed+ " m/s"+"</td></tr>" +
+						            "<tr><td><strong>Wind Direction</strong>"+ "<td>"+data.wind.deg+ "&deg;"+"</td></tr></table>");
+					}
+				});
+			}
+			else if(city=='Banglore'){
+				$.ajax({
+					url: 'http://api.openweathermap.org/data/2.5/weather?q=Bengaluru&units=metric&appid=b0792618526bcd44ce061837892988bf',
+					type: "GET",
+					dataType: "json",
+					success: function(data){
+						$('#demo').html("<h2>Current Weather of "+ city + ", "+data.sys.country+ "</h2>" +
+									"<table><tr><td><strong>Weather</strong> </td> "+"<td> " + data.weather[0].main +"</td></tr>" +
+						            "<tr><td><br/><strong>Description</strong></td>"+"<td><img src='http://openweathermap.org/img/w/"+data.weather[0].icon+".png'>"+data.weather[0].description+ "</td></tr>" +
+						            "<tr><td><strong>Temperature</strong></td> "+"<td>"+ data.main.temp + " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Max Temperature</strong>"+"<td>"+data.main.temp_max+ " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Min Temperature</strong>" + "<td>"+data.main.temp_min+ " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Pressure</strong>"+ "<td>"+data.main.pressure+ " hPa"+"</td></tr>" +
+						            "<tr><td><strong>Humidity</strong>"+ "<td>"+data.main.humidity+ " %"+"</td></tr>" +
+						            "<tr><td><strong>Wind Speed</strong>"+"<td>"+data.wind.speed+ " m/s"+"</td></tr>" +
+						            "<tr><td><strong>Wind Direction</strong>"+ "<td>"+data.wind.deg+ "&deg;"+"</td></tr></table>");
+					}
+				});
+			}
+			else if(city=='Hyderabad'){
+				$.ajax({
+					url: 'http://api.openweathermap.org/data/2.5/weather?q=Hyderabad&units=metric&appid=b0792618526bcd44ce061837892988bf',
+					type: "GET",
+					dataType: "json",
+					success: function(data){
+						$('#demo').html("<h2>Current Weather of "+ city + ", "+data.sys.country+ "</h2>" +
+									"<table><tr><td><strong>Weather</strong> </td> "+"<td> " + data.weather[0].main +"</td></tr>" +
+						            "<tr><td><br/><strong>Description</strong></td>"+"<td><img src='http://openweathermap.org/img/w/"+data.weather[0].icon+".png'>"+data.weather[0].description+ "</td></tr>" +
+						            "<tr><td><strong>Temperature</strong></td> "+"<td>"+ data.main.temp + " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Max Temperature</strong>"+"<td>"+data.main.temp_max+ " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Min Temperature</strong>" + "<td>"+data.main.temp_min+ " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Pressure</strong>"+ "<td>"+data.main.pressure+ " hPa"+"</td></tr>" +
+						            "<tr><td><strong>Humidity</strong>"+ "<td>"+data.main.humidity+ " %"+"</td></tr>" +
+						            "<tr><td><strong>Wind Speed</strong>"+"<td>"+data.wind.speed+ " m/s"+"</td></tr>" +
+						            "<tr><td><strong>Wind Direction</strong>"+ "<td>"+data.wind.deg+ "&deg;"+"</td></tr></table>");
+					
+					}
+				});
+			}
+			else if(city=='Madrid'){
+				$.ajax({
+					url: 'http://api.openweathermap.org/data/2.5/weather?q=Madrid&units=metric&appid=b0792618526bcd44ce061837892988bf',
+					type: "GET",
+					dataType: "json",
+					success: function(data){
+						$('#demo').html("<h2>Current Weather of "+ city + ", "+data.sys.country+ "</h2>" +
+									"<table><tr><td><strong>Weather</strong> </td> "+"<td> " + data.weather[0].main +"</td></tr>" +
+						            "<tr><td><br/><strong>Description</strong></td>"+"<td><img src='http://openweathermap.org/img/w/"+data.weather[0].icon+".png'>"+data.weather[0].description+ "</td></tr>" +
+						            "<tr><td><strong>Temperature</strong></td> "+"<td>"+ data.main.temp + " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Max Temperature</strong>"+"<td>"+data.main.temp_max+ " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Min Temperature</strong>" + "<td>"+data.main.temp_min+ " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Pressure</strong>"+ "<td>"+data.main.pressure+ " hPa"+"</td></tr>" +
+						            "<tr><td><strong>Humidity</strong>"+ "<td>"+data.main.humidity+ " %"+"</td></tr>" +
+						            "<tr><td><strong>Wind Speed</strong>"+"<td>"+data.wind.speed+ " m/s"+"</td></tr>" +
+						            "<tr><td><strong>Wind Direction</strong>"+ "<td>"+data.wind.deg+ "&deg;"+"</td></tr></table>");
+					}
+				});
+			}
+			else if(city=='NewYork'){
+				$.ajax({
+					url: 'http://api.openweathermap.org/data/2.5/weather?q=New york&units=metric&appid=b0792618526bcd44ce061837892988bf',
+					type: "GET",
+					dataType: "json",
+					success: function(data){
+						$('#demo').html("<h2>Current Weather of "+ city + ", "+data.sys.country+ "</h2>" +
+									"<table><tr><td><strong>Weather</strong> </td> "+"<td> " + data.weather[0].main +"</td></tr>" +
+						            "<tr><td><br/><strong>Description</strong></td>"+"<td><img src='http://openweathermap.org/img/w/"+data.weather[0].icon+".png'>"+data.weather[0].description+ "</td></tr>" +
+						            "<tr><td><strong>Temperature</strong></td> "+"<td>"+ data.main.temp + " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Max Temperature</strong>"+"<td>"+data.main.temp_max+ " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Min Temperature</strong>" + "<td>"+data.main.temp_min+ " &deg;C" +"</td></tr>" +
+						            "<tr><td><strong>Pressure</strong>"+ "<td>"+data.main.pressure+ " hPa"+"</td></tr>" +
+						            "<tr><td><strong>Humidity</strong>"+ "<td>"+data.main.humidity+ " %"+"</td></tr>" +
+						            "<tr><td><strong>Wind Speed</strong>"+"<td>"+data.wind.speed+ " m/s"+"</td></tr>" +
+						            "<tr><td><strong>Wind Direction</strong>"+ "<td>"+data.wind.deg+ "&deg;"+"</td></tr></table>");
+					}
+				});
+			}
+			else{
+				alert('Please choose a city!');
+			}
+
+
+
+		});
+	});
+	
+		
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+</body>
+</html>
